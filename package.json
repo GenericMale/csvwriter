@@ -1,0 +1,41 @@
+{
+  "name": "csvwriter",
+  "version": "0.0.1",
+  "description": "Convert any JSON string to CSV",
+  "keywords": [
+    "csv",
+    "json",
+    "convert",
+    "converter",
+    "export",
+    "parse",
+    "json2csv",
+    "jsontocsv",
+    "cli"
+  ],
+  "homepage": "https://github.com/GazonkFoo/csvwriter",
+  "bugs": "https://github.com/GazonkFoo/csvwriter/issues",
+  "license": "MIT",
+  "author": "GazonkFoo",
+  "main": "./lib/csvwriter.js",
+  "bin": {
+    "csvwriter": "./bin/csvwriter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GazonkFoo/csvwriter.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec"
+  },
+  "dependencies": {
+    "JSONPath": "^0.10.0",
+    "commander": "^2.5.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}
