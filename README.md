@@ -136,32 +136,32 @@ Let's consider the following JSON (in.json):
     "tags": ["example", "arrays", "json"],
     "meta": [
       {
-        "type": "number"
+        "type": "number",
         "value": 12.34
       },
       {
-        "type": "boolean"
+        "type": "boolean",
         "value": false
       }
-    ],
+    ]
   },
   {
     "description": "Just for \"demo\"",
     "tags": ["foo", "bar", "baz"],
     "meta": [
       {
-        "type": "array"
+        "type": "array",
         "value": ["another", "array"]
       },
       {
-        "type": "wrong field?"
+        "type": "wrong field?",
         "wrong": "Where am i?"
       },
-     {
-       "type": "newline"
-       "value": "Think\ni'm Lost!"
-     }
-    ],
+      {
+        "type": "newline",
+        "value": "Think\ni'm Lost!"
+      }
+    ]
   }
 ]
 ```
