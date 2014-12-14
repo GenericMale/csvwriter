@@ -1,6 +1,6 @@
 {
   "name": "csvwriter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Convert any JSON string to CSV",
   "keywords": [
     "csv",
@@ -30,10 +30,11 @@
   },
   "dependencies": {
     "JSONPath": "^0.10.0",
+    "cli-table": "^0.3.0",
     "commander": "^2.5.0"
   },
   "devDependencies": {
-    "mocha": "^2.0.1"
+    "mocha": "^2.0.0"
   },
   "engines": {
     "node": ">=0.10"

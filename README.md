@@ -52,6 +52,7 @@ Features
 - Read from file or stdin (CLI)
 - Write to file or stdout (CLI)
 - Can include UTF BOM in output file (CLI)
+- Create a pretty printed table on the console
 - Many CSV variations with configurable:
     - Column delimiter
     - Decimal separator for numbers

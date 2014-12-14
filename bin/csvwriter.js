@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/*global process*/
+
 var csvwriter = require('../lib/csvwriter');
 var pkg = require('../package.json');
 var program = require('commander');
@@ -24,6 +26,7 @@ program
     .option('-q, --quotechar <quotechar>', 'character used to quote strings in the csv (")', '"')
     .option('-Q, --no-doublequote', 'disable doublequoting to escape the quote character')
     .option('-t, --tabs', 'specifies that the csv is delimited with tabs, overrides -d')
+    .option('-T, --table', 'create a neat looking table for the console')
     .option('-u, --quoting <0,1,2,3>', 'quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none', Number, 0)
     .option('-U, --no-utf-bom', 'do not write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf')
     .option('-z, --zero', 'when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering')
