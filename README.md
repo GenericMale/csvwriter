@@ -2,12 +2,15 @@ csvwriter
 =========
 
 Convert any JSON string to CSV with support for nested objects, filtering, many different CSV variations, CLI, ...
+
 There are already a lot of good json to csv modules in the wild and this one aggregates all the features of the other modules and adds many more.
+
 
 Install
 -------
 
     npm install csvwriter
+
 
 Usage
 -----
@@ -34,6 +37,7 @@ Command Line Interface:
 $ echo '{"name": "csvwriter", "repository": {"type": "git", "url": "https://github.com"}}' | csvwriter
 ```
 
+
 Features
 --------
 
@@ -56,6 +60,7 @@ Features
     - Array delimiter for arrays of primitives (strings, numbers, booleans)
     - Nesting delimiter for complex objects
     - Newline character to end rows (CRLF or LF)
+
 
 Command Line Interface
 ----------------------
@@ -80,13 +85,14 @@ Usage: csvwriter [options] [file] - with no file, or when file is -, read standa
     -n, --nesting-delimiter <delimiter>  delimiter used for nested fields of the input (.)
     -N, --max-depth <depth>              maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 to include all fields, 0 will not include nested objects (-1)
     -o, --output <file>                  write to file, use - to write to stdout (default)
-    -q, --quotechar <quotechar>          character used to quote strings in the csv (")
+    -q, --quotechar <quotechar>          character used to quote strings in the csv
     -Q, --no-doublequote                 disable doublequoting to escape the quote character
     -t, --tabs                           specifies that the csv is delimited with tabs, overrides -d
     -u, --quoting <0,1,2,3>              quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none
     -U, --no-utf-bom                     do not write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf
     -z, --zero                           when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering
 ```
+
 
 Examples
 --------
@@ -185,3 +191,29 @@ Also note the automatic escaping of the quoting character ("demo" becomes ""demo
 
 The entire behaviour regarding arrays, quoting, newlines can be configured as well as all the delimiters used.
 The defaults are chosen to meet the requirements of common spreadsheet applications (Libre/Open Office, MS Office, ...)
+
+
+License
+-------------
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Sebastian Maurer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

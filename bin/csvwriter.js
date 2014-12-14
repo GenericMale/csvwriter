@@ -51,7 +51,7 @@ function writeOut(err, csv) {
     }
 
     if (program.output !== '-') {
-        if (program.utf && program.encoding.indexOf('utf') == 0) {
+        if (program.utfBom && program.encoding.indexOf('utf') == 0) {
             csv = '\ufeff' + csv;
         }
         fs.writeFile(program.output, csv, {encoding: program.encoding}, function (err) {
