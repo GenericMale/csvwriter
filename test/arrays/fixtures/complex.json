@@ -1,0 +1,28 @@
+[
+  {
+    "name": "entry 1",
+    "complex": [
+      {
+        "name": "first",
+        "description": "the first"
+      },
+      {
+        "name": "second",
+        "description": "the second"
+      }
+    ]
+  },
+  {
+    "name": "entry 2",
+    "complex": [
+      {
+        "name": "third",
+        "description": "the third"
+      },
+      {
+        "name": "fourth",
+        "info": "looks different"
+      }
+    ]
+  }
+]

@@ -1,24 +1,20 @@
-csvwriter
-=========
+# csvwriter
 
 Convert any JSON string to CSV with support for nested objects, filtering, many different CSV variations, CLI, ...
 
 There are already a lot of good json to csv modules in the wild and this one aggregates all the features of the other modules and adds some more.
 
-
 [csvkit](https://github.com/onyxfish/csvkit) [json2csv](https://github.com/zemirco/json2csv) [commander](https://github.com/tj/commander.js) [JSONPath](https://github.com/s3u/JSONPath) [cli-table](https://github.com/Automattic/cli-table)
 
 
-Install
--------
+## Install
 
     npm install csvwriter
 
 
-Usage
------
+## Usage
 
-In node.js:
+### API
 
 ```js
 var csvwriter = require('csvwriter');
@@ -26,25 +22,43 @@ var data = {
  "name": "csvwriter",
  "repository": {
    "type": "git",
-   "url": "https://github.com"
+   "url": "https://github.com/GazonkFoo/csvwriter"
  }
-}
+};
 csvwriter(data, function(err, csv) {
+  console.log(csv);
+});
+```
+
+With configuration parameters:
+
+```js
+var csvwriter = require('csvwriter');
+var data = [/*...*/];
+csvwriter(data, {delimiter: ';', decimalSeparator: ','}, function(err, csv) {
     console.log(csv);
 });
 ```
 
-Command Line Interface:
+
+### Command Line Interface
+
+Read from stdin and write to stdout:
 
 ```bash
 $ echo '{"name": "csvwriter", "repository": {"type": "git", "url": "https://github.com"}}' | csvwriter
 ```
 
+Using files:
 
-Features
---------
+```bash
+$ csvwriter -o converted.csv source.json
+```
 
-- Command Line Interface and module for node.js
+
+## Features
+
+- Command Line Interface and API
 - Handles complex objects and arrays with different schemas
 - Filtering and traversing using [JSONPath](http://goessner.net/articles/JsonPath/)
 - Automatic and fixed column list
@@ -66,8 +80,7 @@ Features
     - Newline character to end rows (CRLF or LF)
 
 
-Command Line Interface
-----------------------
+## Command Line Interface
 
 ```bash
 Usage: csvwriter [options] [file] - with no file, or when file is -, read standard input
@@ -99,8 +112,11 @@ Usage: csvwriter [options] [file] - with no file, or when file is -, read standa
 ```
 
 
-Examples
---------
+## Examples
+
+For ease of demonstration the examples use the command line interface but all the configuration options except those related to files are also available on the API.
+
+### JSONPath & Column List
 
 Find some of the other json to csv converters on github and create a neat csv of the result:
 
@@ -131,8 +147,9 @@ By default the minimal quoting is used. Only fields containing the column delimi
 
 Also note the sub-field "login" of the "owner" field which is mapped as "owner.login".
 
+### Input/Output File, Arrays, Quotes and Newlines
 
-Let's consider the following JSON (in.json):
+Let's consider the following JSON (stored in a file named in.json):
 
 ```js
 [
@@ -177,7 +194,7 @@ Some funny stuff in there so let's convert this to CSV:
 csvwriter -o out.csv in.json
 ```
 
-So what do we get (out.csv):
+So what do we get (content of out.csv):
 
 ```
 description,tags,meta.0.type,meta.0.value,meta.1.type,meta.1.value,meta.1.wrong,meta.2.type,meta.2.value
@@ -197,13 +214,14 @@ Also note the automatic escaping of the quoting character ("demo" becomes ""demo
 The entire behaviour regarding arrays, quoting, newlines can be configured as well as all the delimiters used.
 The defaults are chosen to meet the requirements of common spreadsheet applications (Libre/Open Office, MS Office, ...)
 
+### Formatted Table & Line Numbers
 
 Finally a bit of eye candy on the console (Table with Line Numbers):
 
 ![Screenshot](http://i.imgur.com/8QNmP6Z.png)
 
-License
--------------
+
+# License
 
 The MIT License (MIT)
 

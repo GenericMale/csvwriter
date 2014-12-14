@@ -26,15 +26,20 @@
     "url": "https://github.com/GazonkFoo/csvwriter.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec"
+    "test": "./node_modules/.bin/mocha --recursive -R spec",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report html -- --recursive -R spec",
+    "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
     "JSONPath": "^0.10.0",
-    "cli-table": "^0.3.0",
-    "commander": "^2.5.0"
+    "commander": "^2.5.0",
+    "cli-table": "^0.3.0"
   },
   "devDependencies": {
-    "mocha": "^2.0.0"
+    "mocha": "^2.0.0",
+    "chai": "^1.10.0",
+    "istanbul": "^0.3.0",
+    "coveralls": "^2.11.0"
   },
   "engines": {
     "node": ">=0.10"

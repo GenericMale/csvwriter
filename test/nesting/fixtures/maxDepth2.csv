@@ -1,0 +1,3 @@
+id,user,packages.0.name,packages.0.description,packages.1.name,packages.1.preview
+1,GazonkFoo,csvwriter,Convert any JSON string to CSV,upcomming,something great to happen
+2,FooGazonk,some,more test data,more,

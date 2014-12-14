@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Simple",
+    "value": "Simple Test"
+  },
+  {
+    "name": "Comma",
+    "value": "Can contain, commas!"
+  },
+  {
+    "name": "Semicolon",
+    "value": "semicolons;are ok"
+  },
+  {
+    "name": "Quotes",
+    "value": "How about 'single' quotes?"
+  },
+  {
+    "name": "Doublequotes",
+    "value": "And \"double\" quotes?"
+  },
+  {
+    "name": "Number",
+    "value": 123.45
+  },
+  {
+    "name": "Array",
+    "value": [1,2,3]
+  }
+]

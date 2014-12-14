@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "user": "GazonkFoo",
+    "packages": [
+      {
+        "name": "csvwriter",
+        "description": "Convert any JSON string to CSV",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/GazonkFoo/csvwriter.git"
+        }
+      },
+      {
+        "name": "upcomming",
+        "preview": "something great to happen",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/GazonkFoo/whoknows.git"
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user": "FooGazonk",
+    "packages": [
+      {
+        "name": "some",
+        "description": "more test data",
+        "repository": {
+          "type": "http",
+          "url": "http://somewhere.com"
+        }
+      },
+      {
+        "name": "more"
+      }
+    ]
+  }
+]

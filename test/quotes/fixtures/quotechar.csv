@@ -1,0 +1,8 @@
+name,value
+Simple,Simple Test
+Comma,'Can contain, commas!'
+Semicolon,semicolons;are ok
+Quotes,'How about ''single'' quotes?'
+Doublequotes,And "double" quotes?
+Number,123.45
+Array,'1,2,3'
