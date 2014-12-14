@@ -3,7 +3,10 @@ csvwriter
 
 Convert any JSON string to CSV with support for nested objects, filtering, many different CSV variations, CLI, ...
 
-There are already a lot of good json to csv modules in the wild and this one aggregates all the features of the other modules and adds many more.
+There are already a lot of good json to csv modules in the wild and this one aggregates all the features of the other modules and adds some more.
+
+
+[csvkit](https://github.com/onyxfish/csvkit) [json2csv](https://github.com/zemirco/json2csv) [commander](https://github.com/tj/commander.js) [JSONPath](https://github.com/s3u/JSONPath) [cli-table](https://github.com/Automattic/cli-table)
 
 
 Install
@@ -89,6 +92,7 @@ Usage: csvwriter [options] [file] - with no file, or when file is -, read standa
     -q, --quotechar <quotechar>          character used to quote strings in the csv
     -Q, --no-doublequote                 disable doublequoting to escape the quote character
     -t, --tabs                           specifies that the csv is delimited with tabs, overrides -d
+    -T, --table                          create a neat looking table for the console
     -u, --quoting <0,1,2,3>              quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none
     -U, --no-utf-bom                     do not write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf
     -z, --zero                           when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering
@@ -193,6 +197,10 @@ Also note the automatic escaping of the quoting character ("demo" becomes ""demo
 The entire behaviour regarding arrays, quoting, newlines can be configured as well as all the delimiters used.
 The defaults are chosen to meet the requirements of common spreadsheet applications (Libre/Open Office, MS Office, ...)
 
+
+Finally a bit of eye candy on the console (Table with Line Numbers):
+
+![Screenshot](http://i.imgur.com/8QNmP6Z.png)
 
 License
 -------------
