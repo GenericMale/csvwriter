@@ -1,9 +1,11 @@
 # csvwriter
 
-[![npm package](https://badge.fury.io/js/csvwriter.svg)](https://www.npmjs.com/package/csvwriter)
-[![dependencies](https://gemnasium.com/GazonkFoo/csvwriter.svg)](https://gemnasium.com/GazonkFoo/csvwriter)
-[![build](https://api.travis-ci.org/GazonkFoo/csvwriter.svg)](https://travis-ci.org/GazonkFoo/csvwriter)
-[![coverage](https://img.shields.io/coveralls/GazonkFoo/csvwriter.svg)](https://coveralls.io/r/GazonkFoo/csvwriter)
+[![NPM Package](https://badge.fury.io/js/csvwriter.svg)](https://www.npmjs.com/package/csvwriter)
+[![Dependencies](https://gemnasium.com/GazonkFoo/csvwriter.svg)](https://gemnasium.com/GazonkFoo/csvwriter)
+[![Build](https://api.travis-ci.org/GazonkFoo/csvwriter.svg)](https://travis-ci.org/GazonkFoo/csvwriter)
+[![Coverage](https://img.shields.io/coveralls/GazonkFoo/csvwriter.svg)](https://coveralls.io/r/GazonkFoo/csvwriter)
+[![Codacy](https://www.codacy.com/project/badge/ae25ffe3a4ff4d52a6d89884b8bc1796)](https://www.codacy.com/public/gazonkdev/csvwriter)
+[![Code Climate](https://codeclimate.com/github/GazonkFoo/csvwriter/badges/gpa.svg)](https://codeclimate.com/github/GazonkFoo/csvwriter)
 
 Convert any JSON string to CSV with support for nested objects, filtering, many different CSV variations, CLI, ...
 

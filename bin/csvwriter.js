@@ -32,6 +32,27 @@ program
     .option('-z, --zero', 'when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering')
     .parse(process.argv);
 
+function writeOut(err, csv) {
+    if (err) {
+        console.error(err.stack || err.message || err);
+        process.exit(1);
+    }
+
+    if (program.output !== '-') {
+        if (program.utfBom && program.encoding.indexOf('utf') === 0) {
+            csv = '\ufeff' + csv;
+        }
+        fs.writeFile(program.output, csv, {encoding: program.encoding}, function (err) {
+            if (err) {
+                console.error(err.message || err);
+                process.exit(1);
+            }
+        });
+    } else {
+        process.stdout.write(csv);
+    }
+}
+
 if (program.args.length && program.args[0] !== '-') {
     var stream = fs.createReadStream(program.args[0], {encoding: program.encoding});
 } else {
@@ -46,24 +67,3 @@ stream.on('data', function (chunk) {
 stream.on('end', function () {
     csvwriter(data, program, writeOut);
 });
-
-function writeOut(err, csv) {
-    if (err) {
-        console.error(err.stack || err.message || err);
-        process.exit(1);
-    }
-
-    if (program.output !== '-') {
-        if (program.utfBom && program.encoding.indexOf('utf') == 0) {
-            csv = '\ufeff' + csv;
-        }
-        fs.writeFile(program.output, csv, {encoding: program.encoding}, function (err) {
-            if (err) {
-                console.error(err.message || err);
-                process.exit(1);
-            }
-        });
-    } else {
-        process.stdout.write(csv);
-    }
-}
