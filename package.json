@@ -26,7 +26,8 @@
     "url": "https://github.com/GazonkFoo/csvwriter.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec",
+    "test": "./node_modules/.bin/mocha -R spec ./test/api/",
+    "test-cli": "./node_modules/.bin/mocha -R spec ./test/cli/",
     "docs": "./node_modules/.bin/jsdoc2md lib/*.js --template readme.hbs --heading-depth 2 > README.md",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report html -- -R spec",
     "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf ./coverage"

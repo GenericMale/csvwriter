@@ -1,4 +1,4 @@
-var expectAPI = require('./helpers/testutil').expectAPI;
+var expectAPI = require('./../testbase').expectAPI;
 var expect = require('chai').expect;
 
 describe('quotes', function () {

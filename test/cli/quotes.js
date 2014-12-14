@@ -1,4 +1,4 @@
-var expectCLI = require('./helpers/testutil').expectCLI;
+var expectCLI = require('./../testbase').expectCLI;
 var expect = require('chai').expect;
 
 describe('quotes (CLI)', function () {
