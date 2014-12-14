@@ -1,5 +1,10 @@
 # csvwriter
 
+[![NPM](https://badge.fury.io/js/csvwriter.svg)](https://www.npmjs.com/package/csvwriter)
+[![Dependencies](https://gemnasium.com/GazonkFoo/csvwriter.svg)](https://gemnasium.com/GazonkFoo/csvwriter)
+[![Build](https://api.travis-ci.org/GazonkFoo/csvwriter.svg)](https://travis-ci.org/GazonkFoo/csvwriter)
+[![Coverage](https://img.shields.io/coveralls/GazonkFoo/csvwriter.svg)](https://coveralls.io/r/GazonkFoo/csvwriter)
+
 Convert any JSON string to CSV with support for nested objects, filtering, many different CSV variations, CLI, ...
 
 There are already a lot of good json to csv modules in the wild and this one aggregates all the features of the other modules and adds some more.
