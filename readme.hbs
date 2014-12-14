@@ -228,58 +228,7 @@ Finally a bit of eye candy on the console (Table with Line Numbers):
 
 # API Reference
 
-##Index
-
-**Functions**
-
-* [csvwriter(data, [params], callback)](#csvwriter)
-
-**Typedefs**
-
-* [type: csvParameters](#csvParameters)
-* [callback: csvCallback](#csvCallback)
- 
-<a name="csvwriter"></a>
-##csvwriter(data, [params], callback)
-Convert any JSON string to CSV with support for nested objects, filtering, many different CSV variations, CLI, ...
-
-**Params**
-
-- data `string` | `object` - The source json data which should be converted. Can be a string or a javascript object.  
-- \[params\] <code>[csvParameters](#csvParameters)</code> - Configuration of the CSV generation.  
-- callback <code>[csvCallback](#csvCallback)</code> - Callback to handle the generated CSV string.  
-
-<a name="csvParameters"></a>
-##type: csvParameters
-**Properties**
-
-- arrayDelimiter `string` - delimiting character for arrays of primitives (strings, booleans, numbers), set to empty string ("") to disable flatting out primitive arrays  
-- crlf `boolean` - use line feed (\n) or carriage return + line feed (\r\n) as line separator  
-- delimiter `string` - delimiting character of the csv  
-- decimalSeparator `string` - the decimal mark to use for numbers  
-- fields `string` - specify a comma (,) separated list of fields to convert  
-- headerRow `boolean` - include a header row as first line  
-- path `string` - jsonpath to apply on the object  
-- linenumbers `boolean` - insert a column of line numbers at the front of the output, useful when piping to grep or as a simple primary key  
-- suppressLineBreaks `boolean` - remove line breaks (\n) from field values  
-- nestingDelimiter `string` - delimiter used for nested fields of the input  
-- maxDepth `number` - maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 to include all fields, 0 will not include nested objects  
-- quotechar `string` - character used to quote strings in the csv  
-- doublequote `boolean` - doublequote to escape the quote character  
-- table `boolean` - create a neat looking table for the console  
-- quoting `number` - quoting style used in the csv: 0 = quote minimal, 1 = quote all, 2 = quote non-numeric, 3 = quote none  
-- zero `boolean` - when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering  
-
-**Type**: `object`  
-<a name="csvCallback"></a>
-##callback: csvCallback
-**Params**
-
-- err `error` - Error object or null if no error occurred.  
-- csv `string` - The generated CSV as string.  
-
-**Type**: `function`  
-
+{{>main}}
 
 # License
 

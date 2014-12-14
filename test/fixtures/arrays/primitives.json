@@ -1,0 +1,14 @@
+[
+  {
+    "name": "entry 1",
+    "strings": ["first", "second", "third"],
+    "numbers": [5, 4],
+    "booleans": [true, false]
+  },
+  {
+    "name": "entry 2",
+    "strings": ["fourth", "fifth"],
+    "numbers": [3, 2, 1],
+    "booleans": [false]
+  }
+]
