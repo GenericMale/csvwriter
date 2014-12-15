@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 
-/*global process*/
-
 var csvwriter = require('../lib/csvwriter');
 var pkg = require('../package.json');
-var program = require('commander');
 var fs = require('fs');
 
+/**
+ * @type {csvParameters}
+ */
+var program = require('commander');
 program
     .version(pkg.version)
     .usage('[options] [csv] - with no csv, or when csv is -, read standard input')

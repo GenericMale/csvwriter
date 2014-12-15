@@ -255,22 +255,25 @@ Convert any JSON string to CSV with support for nested objects, filtering, many 
 ##type: csvParameters
 **Properties**
 
-- arrayDelimiter `string` - delimiting character for arrays of primitives (strings, booleans, numbers), set to empty string ("") to disable flatting out primitive arrays  
-- crlf `boolean` - use line feed (\n) or carriage return + line feed (\r\n) as line separator  
-- delimiter `string` - delimiting character of the csv  
-- decimalSeparator `string` - the decimal mark to use for numbers  
+- arrayDelimiter `string` - delimiting character for arrays of primitives (strings, booleans, numbers), set to empty string ("") to disable flatting out primitive arrays (,)  
+- crlf `boolean` - use line feed (\n) or carriage return + line feed (\r\n) as line separator (true)  
+- delimiter `string` - delimiting character of the csv (,)  
+- decimalSeparator `string` - the decimal mark to use for numbers (.)  
+- encoding `string` - encoding used for the input and output (utf8)  
 - fields `string` - specify a comma (,) separated list of fields to convert  
-- headerRow `boolean` - include a header row as first line  
+- headerRow `boolean` - include a header row as first line (true)  
 - path `string` - jsonpath to apply on the object  
-- linenumbers `boolean` - insert a column of line numbers at the front of the output, useful when piping to grep or as a simple primary key  
-- suppressLineBreaks `boolean` - remove line breaks (\n) from field values  
-- nestingDelimiter `string` - delimiter used for nested fields of the input  
-- maxDepth `number` - maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 to include all fields, 0 will not include nested objects  
-- quotechar `string` - character used to quote strings in the csv  
-- doublequote `boolean` - doublequote to escape the quote character  
-- table `boolean` - create a neat looking table for the console  
-- quoting `number` - quoting style used in the csv: 0 = quote minimal, 1 = quote all, 2 = quote non-numeric, 3 = quote none  
-- zero `boolean` - when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering  
+- linenumbers `boolean` - insert a column of line numbers at the front of the output, useful when piping to grep or as a simple primary key (false)  
+- suppressLineBreaks `boolean` - remove line breaks (\n) from field values (false)  
+- nestingDelimiter `string` - delimiter used for nested fields of the input (.)  
+- maxDepth `number` - maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 (default) to include all fields, 0 will not include nested objects  
+- output `string` - write to csv, use - to write to stdout (default)  
+- quotechar `string` - character used to quote strings in the csv (")  
+- doublequote `boolean` - doublequote to escape the quote character (true)  
+- table `boolean` - create a neat looking table for the console (false)  
+- quoting `number` - quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none  
+- utfBom `boolean` - write utf bom (0xFEFF or 0xEFBBBF) in csv if encoding is set to utf (false)  
+- zero `boolean` - when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering (false)  
 
 **Type**: `object`  
 <a name="csvCallback"></a>

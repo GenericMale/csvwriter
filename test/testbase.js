@@ -1,12 +1,13 @@
-"use strict";
+/*global __dirname */
 
 var expect = require('chai').expect;
 var fs = require('fs');
-var execFile = require('child_process').execFile;
+var exec = require('child_process').exec;
 var csvwriter = require('../lib/csvwriter');
+var path = require('path');
 
 module.exports.readFixture = function (name, callback) {
-    return fs.readFile(__dirname + '/fixtures/' + name, 'utf8', callback);
+    return fs.readFile(path.join(__dirname, 'fixtures', name), 'utf8', callback);
 };
 
 module.exports.expectAPI = function (input, output, done, params) {
@@ -18,6 +19,8 @@ module.exports.expectAPI = function (input, output, done, params) {
             } else {
                 expect(err).to.be.null();
                 module.exports.readFixture(output, function (err, outputData) {
+                    csv = csv.replace(/\u001b\[.*?m/g, ''); //remove ANSI colors (for table comparison);
+
                     expect(err).to.be.null();
                     expect(csv).to.equal(outputData);
                     done();
@@ -28,8 +31,9 @@ module.exports.expectAPI = function (input, output, done, params) {
 };
 
 module.exports.expectCLI = function (input, output, done, params) {
-    params = [__dirname + '/fixtures/' + input].concat(params || []);
-    execFile(__dirname + '/../bin/csvwriter.js', params, function (err, csv) {
+    var csvwriter = path.join(__dirname, '..', 'bin', 'csvwriter.js');
+    var fixture = path.join(__dirname, 'fixtures', input);
+    exec('"' + process.execPath + '" "' + csvwriter + '" "' + fixture + '" ' + params, function (err, csv) {
         if (typeof output === 'function') {
             output(err, csv);
         } else {

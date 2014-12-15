@@ -26,34 +26,6 @@ describe('format', function () {
     it('will convert to array', function (done) {
         expectAPI('format/object.json', 'format/object.csv', done);
     });
-    it('can become a console table', function (done) {
-        expectAPI('format/data.json', function (err, csv) {
-            expect(err).to.be.null();
-            expect(csv).not.to.be.empty(); //TODO: validate table
-            done();
-        }, done, {table: true});
-    });
-    it('can become a console table with line numbers', function (done) {
-        expectAPI('format/data.json', function (err, csv) {
-            expect(err).to.be.null();
-            expect(csv).not.to.be.empty(); //TODO: validate table
-            done();
-        }, done, {table: true, linenumbers: true});
-    });
-    it('can become a console table with line numbers starting with 0', function (done) {
-        expectAPI('format/data.json', function (err, csv) {
-            expect(err).to.be.null();
-            expect(csv).not.to.be.empty(); //TODO: validate table
-            done();
-        }, done, {table: true, linenumbers: true, zero: true});
-    });
-    it('can become a console table without header', function (done) {
-        expectAPI('format/data.json', function (err, csv) {
-            expect(err).to.be.null();
-            expect(csv).not.to.be.empty(); //TODO: validate table
-            done();
-        }, done, {table: true, headerRow: false});
-    });
     it('reports illegal json', function (done) {
         expectAPI('format/illegal.json', function (err, csv) {
             expect(err).not.to.be.null();
