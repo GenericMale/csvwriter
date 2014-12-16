@@ -9,7 +9,7 @@
 
 Convert any JSON string to CSV with support for nested objects, filtering, many different CSV variations, CLI, ...
 
-There are already a lot of good json to csv modules in the wild and this one aggregates all the features of the other modules and adds some more.
+There are already a lot of good json to csv modules in the wild and this one aggregates all the features of the other modules and adds many, many more.
 
 [csvkit](https://github.com/onyxfish/csvkit) [json2csv](https://github.com/zemirco/json2csv) [commander](https://github.com/tj/commander.js) [JSONPath](https://github.com/s3u/JSONPath) [cli-table](https://github.com/Automattic/cli-table)
 
@@ -73,6 +73,7 @@ $ csvwriter -o converted.csv source.json
 - Escape quoting characters with double quotes (can be disabled)
 - Strip line breaks in field values or quote them properly
 - Optionally add column with line numbers to CSV
+- Configurable value for empty entries (e.g. N/A)
 - Read from file or stdin (CLI)
 - Write to file or stdout (CLI)
 - Can include UTF BOM in output file (CLI)
@@ -82,9 +83,11 @@ $ csvwriter -o converted.csv source.json
     - Decimal separator for numbers
     - Quoting character
     - Quoting mode (always, never, everything but numbers, only when needed)
+    - Escape character if quoting is disabled
     - Array delimiter for arrays of primitives (strings, numbers, booleans)
     - Nesting delimiter for complex objects
     - Newline character to end rows (CRLF or LF)
+- Good test coverage
 
 
 ## Command Line Interface
@@ -270,13 +273,13 @@ Convert any JSON string to CSV with support for nested objects, filtering, many 
 - suppressLineBreaks `boolean` - remove line breaks (\n) from field values (false)  
 - nestingDelimiter `string` - delimiter used for nested fields of the input (.)  
 - maxDepth `number` - maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 (default) to include all fields, 0 will not include nested objects  
-- output `string` - write to file, use - to write to stdout (default)
+- output `string` - write to file, use - to write to stdout (default)  
 - quote `string` - character used to quote strings in the csv (")  
 - doubleQuote `boolean` - insert another quote to escape the quote character (true)  
 - nullString `string` - string to use for writing null or undefined values  
 - table `boolean` - create a neat looking table for the console (false)  
 - quoteMode `number` - quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none  
-- utfBom `boolean` - write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf (true)
+- utfBom `boolean` - write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf (true)  
 - zero `boolean` - when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering (false)  
 
 **Type**: `object`  

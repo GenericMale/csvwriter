@@ -1,7 +1,7 @@
 {
   "name": "csvwriter",
   "version": "1.1.0",
-  "description": "Convert any JSON string to CSV",
+  "description": "Create CSV from complex JSON objects with CLI or API",
   "keywords": [
     "csv",
     "json",
