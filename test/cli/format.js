@@ -23,6 +23,12 @@ describe('format (CLI)', function () {
     it('can be without header row', function (done) {
         expectCLI('format/data.json', 'format/noheader.csv', done, '-H');
     });
+    it('can write a specific string for missing values', function (done) {
+        expectCLI('format/data.json', 'format/nullstring.csv', done, '-s "N/A"');
+    });
+    it('can separate rows with LF', function (done) {
+        expectCLI('format/data.json', 'linefeed/default.csv', done, '-c');
+    });
     it('will convert to array', function (done) {
         expectCLI('format/object.json', 'format/object.csv', done);
     });

@@ -20,6 +20,10 @@
     "value": "And \"double\" quotes?"
   },
   {
+    "name": "Newlines",
+    "value": "Newlines\r\nare great!?"
+  },
+  {
     "name": "Number",
     "value": 123.45
   },

@@ -1,10 +1,10 @@
 name,value
 Simple,Simple Test
-Comma,Can contain, commas!
+Comma,Can contain\, commas!
 Semicolon,semicolons;are ok
 Quotes,How about 'single' quotes?
 Doublequotes,And "double" quotes?
-Newlines,Newlines
+Newlines,Newlines\
 are great!?
 Number,123.45
-Array,1,2,3
+Array,1\,2\,3

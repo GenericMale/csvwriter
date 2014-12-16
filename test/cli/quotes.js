@@ -14,6 +14,9 @@ describe('quotes (CLI)', function () {
     it('can be disabled', function (done) {
         expectCLI('quotes/data.json', 'quotes/none.csv', done, '-u 3');
     });
+    it('can escape without quoting', function (done) {
+        expectCLI('quotes/data.json', 'quotes/escape.csv', done, '-u 3 -E "\\\\"');
+    });
     it('can ignore quotes in values', function (done) {
         expectCLI('quotes/data.json', 'quotes/doublequote.csv', done, '-Q');
     });
@@ -28,5 +31,8 @@ describe('quotes (CLI)', function () {
     });
     it('will adapt to changed array delimiter', function (done) {
         expectCLI('quotes/data.json', 'quotes/arrays.csv', done, '-a ";"');
+    });
+    it('will adapt to removed line breaks', function (done) {
+        expectCLI('quotes/data.json', 'quotes/nolinebreaks.csv', done, '-L');
     });
 });

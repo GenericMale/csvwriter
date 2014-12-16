@@ -14,4 +14,7 @@ describe('table (CLI)', function () {
     it('may be created without header', function (done) {
         expectCLI('table/data.json', 'table/nohead.txt', done, '-TH');
     });
+    it('can write a specific string for missing values', function (done) {
+        expectCLI('table/data.json', 'table/nullstring.txt', done, '-T -s "N/A"');
+    });
 });

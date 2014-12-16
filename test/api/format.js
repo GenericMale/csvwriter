@@ -15,13 +15,19 @@ describe('format', function () {
         expectAPI('format/data.json', 'format/tabs.csv', done, {tabs: true});
     });
     it('can add line numbers', function (done) {
-        expectAPI('format/data.json', 'format/linenumbers.csv', done, {linenumbers: true});
+        expectAPI('format/data.json', 'format/linenumbers.csv', done, {lineNumbers: true});
     });
     it('can add line numbers starting with 0', function (done) {
-        expectAPI('format/data.json', 'format/zero.csv', done, {linenumbers: true, zero: true});
+        expectAPI('format/data.json', 'format/zero.csv', done, {lineNumbers: true, zero: true});
     });
     it('can be without header row', function (done) {
-        expectAPI('format/data.json', 'format/noheader.csv', done, {headerRow: false});
+        expectAPI('format/data.json', 'format/noheader.csv', done, {header: false});
+    });
+    it('can write a specific string for missing values', function (done) {
+        expectAPI('format/data.json', 'format/nullstring.csv', done, {nullString: 'N/A'});
+    });
+    it('can separate rows with LF', function (done) {
+        expectAPI('format/data.json', 'linefeed/default.csv', done, {crlf: false});
     });
     it('will convert to array', function (done) {
         expectAPI('format/object.json', 'format/object.csv', done);

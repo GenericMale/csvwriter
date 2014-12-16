@@ -101,19 +101,21 @@ Usage: csvwriter [options] [file] - with no file, or when file is -, read standa
     -d, --delimiter <delimiter>          delimiting character of the csv (,)
     -D, --decimal-separator <separator>  the decimal mark to use for numbers (.)
     -e, --encoding <encoding>            encoding used for the input and output (utf8)
+    -E, --escape <escape>                character used to escape the delimiter, newlines and the escape character itself if quoting is disabled
     -f, --fields <fields>                specify a comma (,) separated list of fields to convert
-    -H, --no-header-row                  do not include a header row as first line
+    -H, --no-header                      do not include a header row as first line
     -p, --path <path>                    jsonpath to apply on the object
-    -l, --linenumbers                    insert a column of line numbers at the front of the output, useful when piping to grep or as a simple primary key
+    -l, --line-numbers                   insert a column of line numbers at the front of the output, useful when piping to grep or as a simple primary key
     -L, --suppress-line-breaks           remove line breaks (\n) from field values
     -n, --nesting-delimiter <delimiter>  delimiter used for nested fields of the input (.)
     -N, --max-depth <depth>              maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 to include all fields, 0 will not include nested objects (-1)
-    -o, --output <file>                  write to file, use - to write to stdout (default)
-    -q, --quotechar <quotechar>          character used to quote strings in the csv
-    -Q, --no-doublequote                 disable doublequoting to escape the quote character
+    -o, --output <file>                   write to file, use - to write to stdout (default)
+    -q, --quote <quote>                  character used to quote strings in the csv
+    -Q, --no-double-quote                disable inserting another quote to escape the quote character
+    -s, --null-string <string>           string to use for writing null or undefined values
     -t, --tabs                           specifies that the csv is delimited with tabs, overrides -d
     -T, --table                          create a neat looking table for the console
-    -u, --quoting <0,1,2,3>              quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none
+    -u, --quote-mode <0,1,2,3>           quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none
     -U, --no-utf-bom                     do not write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf
     -z, --zero                           when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering
 ```
@@ -260,19 +262,21 @@ Convert any JSON string to CSV with support for nested objects, filtering, many 
 - delimiter `string` - delimiting character of the csv (,)  
 - decimalSeparator `string` - the decimal mark to use for numbers (.)  
 - encoding `string` - encoding used for the input and output (utf8)  
+- escape `string` - character used to escape the delimiter, newlines and the escape character itself if quoting is disabled  
 - fields `string` - specify a comma (,) separated list of fields to convert  
-- headerRow `boolean` - include a header row as first line (true)  
+- header `boolean` - include a header as first line (true)  
 - path `string` - jsonpath to apply on the object  
-- linenumbers `boolean` - insert a column of line numbers at the front of the output, useful when piping to grep or as a simple primary key (false)  
+- lineNumbers `boolean` - insert a column of line numbers at the front of the output, useful when piping to grep or as a simple primary key (false)  
 - suppressLineBreaks `boolean` - remove line breaks (\n) from field values (false)  
 - nestingDelimiter `string` - delimiter used for nested fields of the input (.)  
 - maxDepth `number` - maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 (default) to include all fields, 0 will not include nested objects  
-- output `string` - write to csv, use - to write to stdout (default)  
-- quotechar `string` - character used to quote strings in the csv (")  
-- doublequote `boolean` - doublequote to escape the quote character (true)  
+- output `string` - write to file, use - to write to stdout (default)
+- quote `string` - character used to quote strings in the csv (")  
+- doubleQuote `boolean` - insert another quote to escape the quote character (true)  
+- nullString `string` - string to use for writing null or undefined values  
 - table `boolean` - create a neat looking table for the console (false)  
-- quoting `number` - quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none  
-- utfBom `boolean` - write utf bom (0xFEFF or 0xEFBBBF) in csv if encoding is set to utf (false)  
+- quoteMode `number` - quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none  
+- utfBom `boolean` - write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf (true)
 - zero `boolean` - when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering (false)  
 
 **Type**: `object`  
