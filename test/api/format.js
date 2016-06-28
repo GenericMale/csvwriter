@@ -34,8 +34,8 @@ describe('format', function () {
     });
     it('reports illegal json', function (done) {
         expectAPI('format/illegal.json', function (err, csv) {
-            expect(err).not.to.be.null();
-            expect(csv).to.be.undefined();
+            expect(err).not.to.be.null;
+            expect(csv).to.be.undefined;
             done();
         }, done);
     });

@@ -25,8 +25,8 @@ describe('nesting', function () {
     });
     it('reports illegal jsonpath', function (done) {
         expectAPI('nesting/data.json', function (err, csv) {
-            expect(err).not.to.be.null();
-            expect(csv).to.be.undefined();
+            expect(err).not.to.be.null;
+            expect(csv).to.be.undefined;
             done();
         }, done, {path: '()'});
     });

@@ -235,62 +235,75 @@ Finally a bit of eye candy on the console (Table with Line Numbers):
 
 # API Reference
 
-##Index
+## Functions
 
-**Functions**
+<dl>
+<dt><a href="#csvwriter">csvwriter(data, [params], callback)</a></dt>
+<dd><p>Convert any JSON string to CSV with support for nested objects, filtering, many different CSV variations, CLI, ...</p>
+</dd>
+</dl>
 
-* [csvwriter(data, [params], callback)](#csvwriter)
+## Typedefs
 
-**Typedefs**
+<dl>
+<dt><a href="#csvParameters">csvParameters</a> : <code>object</code></dt>
+<dd></dd>
+<dt><a href="#csvCallback">csvCallback</a> : <code>function</code></dt>
+<dd></dd>
+</dl>
 
-* [type: csvParameters](#csvParameters)
-* [callback: csvCallback](#csvCallback)
- 
 <a name="csvwriter"></a>
-##csvwriter(data, [params], callback)
+
+## csvwriter(data, [params], callback)
 Convert any JSON string to CSV with support for nested objects, filtering, many different CSV variations, CLI, ...
 
-**Params**
+**Kind**: global function  
 
-- data `string` | `object` - The source json data which should be converted. Can be a string or a javascript object.  
-- \[params\] <code>[csvParameters](#csvParameters)</code> - Configuration of the CSV generation.  
-- callback <code>[csvCallback](#csvCallback)</code> - Callback to handle the generated CSV string.  
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>string</code> &#124; <code>object</code> | The source json data which should be converted. Can be a string or a javascript object. |
+| [params] | <code>[csvParameters](#csvParameters)</code> | Configuration of the CSV generation. |
+| callback | <code>[csvCallback](#csvCallback)</code> | Callback to handle the generated CSV string. |
 
 <a name="csvParameters"></a>
-##type: csvParameters
+
+## csvParameters : <code>object</code>
+**Kind**: global typedef  
 **Properties**
 
-- arrayDelimiter `string` - delimiting character for arrays of primitives (strings, booleans, numbers), set to empty string ("") to disable flatting out primitive arrays (,)  
-- crlf `boolean` - use line feed (\n) or carriage return + line feed (\r\n) as line separator (true)  
-- delimiter `string` - delimiting character of the csv (,)  
-- decimalSeparator `string` - the decimal mark to use for numbers (.)  
-- encoding `string` - encoding used for the input and output (utf8)  
-- escape `string` - character used to escape the delimiter, newlines and the escape character itself if quoting is disabled  
-- fields `string` - specify a comma (,) separated list of fields to convert  
-- header `boolean` - include a header as first line (true)  
-- path `string` - jsonpath to apply on the object  
-- lineNumbers `boolean` - insert a column of line numbers at the front of the output, useful when piping to grep or as a simple primary key (false)  
-- suppressLineBreaks `boolean` - remove line breaks (\n) from field values (false)  
-- nestingDelimiter `string` - delimiter used for nested fields of the input (.)  
-- maxDepth `number` - maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 (default) to include all fields, 0 will not include nested objects  
-- output `string` - write to file, use - to write to stdout (default)  
-- quote `string` - character used to quote strings in the csv (")  
-- doubleQuote `boolean` - insert another quote to escape the quote character (true)  
-- nullString `string` - string to use for writing null or undefined values  
-- table `boolean` - create a neat looking table for the console (false)  
-- quoteMode `number` - quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none  
-- utfBom `boolean` - write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf (true)  
-- zero `boolean` - when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering (false)  
+| Name | Type | Description |
+| --- | --- | --- |
+| arrayDelimiter | <code>string</code> | delimiting character for arrays of primitives (strings, booleans, numbers), set to empty string ("") to disable flatting out primitive arrays (,) |
+| crlf | <code>boolean</code> | use line feed (\n) or carriage return + line feed (\r\n) as line separator (true) |
+| delimiter | <code>string</code> | delimiting character of the csv (,) |
+| decimalSeparator | <code>string</code> | the decimal mark to use for numbers (.) |
+| encoding | <code>string</code> | encoding used for the input and output (utf8) |
+| escape | <code>string</code> | character used to escape the delimiter, newlines and the escape character itself if quoting is disabled |
+| fields | <code>string</code> | specify a comma (,) separated list of fields to convert |
+| header | <code>boolean</code> | include a header as first line (true) |
+| path | <code>string</code> | jsonpath to apply on the object |
+| lineNumbers | <code>boolean</code> | insert a column of line numbers at the front of the output, useful when piping to grep or as a simple primary key (false) |
+| suppressLineBreaks | <code>boolean</code> | remove line breaks (\n) from field values (false) |
+| nestingDelimiter | <code>string</code> | delimiter used for nested fields of the input (.) |
+| maxDepth | <code>number</code> | maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 (default) to include all fields, 0 will not include nested objects |
+| output | <code>string</code> | write to file, use - to write to stdout (default) |
+| quote | <code>string</code> | character used to quote strings in the csv (") |
+| doubleQuote | <code>boolean</code> | insert another quote to escape the quote character (true) |
+| nullString | <code>string</code> | string to use for writing null or undefined values |
+| table | <code>boolean</code> | create a neat looking table for the console (false) |
+| quoteMode | <code>number</code> | quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none |
+| utfBom | <code>boolean</code> | write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf (true) |
+| zero | <code>boolean</code> | when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering (false) |
 
-**Type**: `object`  
 <a name="csvCallback"></a>
-##callback: csvCallback
-**Params**
 
-- err `error` - Error object or null if no error occurred.  
-- csv `string` - The generated CSV as string.  
+## csvCallback : <code>function</code>
+**Kind**: global typedef  
 
-**Type**: `function`  
+| Param | Type | Description |
+| --- | --- | --- |
+| err | <code>error</code> | Error object or null if no error occurred. |
+| csv | <code>string</code> | The generated CSV as string. |
 
 
 # License

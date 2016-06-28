@@ -23,9 +23,9 @@ describe('nesting (CLI)', function () {
 
     it('reports illegal jsonpath', function (done) {
         expectCLI('nesting/data.json', function (err) {
-            expect(err).not.to.be.null();
+            expect(err).not.to.be.null;
             // FIXME: JSONPath writes to stdout on errors!
-            //expect(csv).to.be.empty();
+            //expect(csv).to.be.empty;
             done();
         }, done, '-p "()"');
     });

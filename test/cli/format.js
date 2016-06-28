@@ -34,8 +34,8 @@ describe('format (CLI)', function () {
     });
     it('reports illegal json', function (done) {
         expectCLI('format/illegal.json', function (err, csv) {
-            expect(err).not.to.be.null();
-            expect(csv).to.be.empty();
+            expect(err).not.to.be.null;
+            expect(csv).to.be.empty;
             done();
         }, done);
     });

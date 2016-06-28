@@ -15,11 +15,11 @@ module.exports.expectAPI = function (input, output, done, params) {
         if (typeof output === 'function') {
             output(err, csv);
         } else {
-            expect(err).to.be.null();
+            expect(err).to.be.null;
             module.exports.readFixture(output, function (err, outputData) {
                 csv = csv.replace(/\u001b\[.*?m/g, ''); //remove ANSI colors (for table comparison);
 
-                expect(err).to.be.null();
+                expect(err).to.be.null;
                 expect(csv).to.equal(outputData);
                 done();
             });
@@ -27,7 +27,7 @@ module.exports.expectAPI = function (input, output, done, params) {
     };
 
     module.exports.readFixture(input, function (err, inputData) {
-        expect(err).to.be.null();
+        expect(err).to.be.null;
         if(params) {
             csvwriter(inputData, params, callback);
         } else {
@@ -43,9 +43,9 @@ module.exports.expectCLI = function (input, output, done, params) {
         if (typeof output === 'function') {
             output(err, csv);
         } else {
-            expect(err).to.be.null();
+            expect(err).to.be.null;
             module.exports.readFixture(output, function (err, outputData) {
-                expect(err).to.be.null();
+                expect(err).to.be.null;
                 expect(csv).to.equal(outputData);
                 done();
             });
