@@ -112,12 +112,13 @@ Usage: csvwriter [options] [file] - with no file, or when file is -, read standa
     -L, --suppress-line-breaks           remove line breaks (\n) from field values
     -n, --nesting-delimiter <delimiter>  delimiter used for nested fields of the input (.)
     -N, --max-depth <depth>              maximum depth of the json object, fields below max-depth will not be included in the csv, use -1 to include all fields, 0 will not include nested objects (-1)
-    -o, --output <file>                   write to file, use - to write to stdout (default)
-    -q, --quote <quote>                  character used to quote strings in the csv
+    -o, --output <file>                  write to file, use - to write to stdout (default)
+    -q, --quote <quote>                  character used to quote strings in the csv (")
     -Q, --no-double-quote                disable inserting another quote to escape the quote character
     -s, --null-string <string>           string to use for writing null or undefined values
     -t, --tabs                           specifies that the csv is delimited with tabs, overrides -d
     -T, --table                          create a neat looking table for the console
+    -C, --header-color <color>           color of the table header, one of: black, red, green, yellow, blue, magenta, cyan, white, gray (red)
     -u, --quote-mode <0,1,2,3>           quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none
     -U, --no-utf-bom                     do not write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf
     -z, --zero                           when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering
@@ -291,6 +292,7 @@ Convert any JSON string to CSV with support for nested objects, filtering, many 
 | doubleQuote | <code>boolean</code> | insert another quote to escape the quote character (true) |
 | nullString | <code>string</code> | string to use for writing null or undefined values |
 | table | <code>boolean</code> | create a neat looking table for the console (false) |
+| headerColor | <code>string</code> | color of the table header, one of: black, red, green, yellow, blue, magenta, cyan, white, gray (red) |
 | quoteMode | <code>number</code> | quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none |
 | utfBom | <code>boolean</code> | write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf (true) |
 | zero | <code>boolean</code> | when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering (false) |

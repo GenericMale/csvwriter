@@ -1,5 +1,4 @@
 var expectAPI = require('./../testbase').expectAPI;
-var expect = require('chai').expect;
 
 describe('table', function () {
     it('looks good by default', function (done) {
@@ -16,5 +15,8 @@ describe('table', function () {
     });
     it('can write a specific string for missing values', function (done) {
         expectAPI('table/data.json', 'table/nullstring.txt', done, {table: true, nullString: 'N/A'});
+    });
+    it('supports header colors', function (done) {
+        expectAPI('table/data.json', 'table/color.txt', done, {table: true, headerColor: 'red'});
     });
 });

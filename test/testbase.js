@@ -17,8 +17,6 @@ module.exports.expectAPI = function (input, output, done, params) {
         } else {
             expect(err).to.be.null;
             module.exports.readFixture(output, function (err, outputData) {
-                csv = csv.replace(/\u001b\[.*?m/g, ''); //remove ANSI colors (for table comparison);
-
                 expect(err).to.be.null;
                 expect(csv).to.equal(outputData);
                 done();

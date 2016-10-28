@@ -8,6 +8,10 @@
     "description": "doing some tests"
   },
   {
-    "user": "Mr Foo"
+    "user": "Empty"
+  },
+  {
+    "user": "Null",
+    "description": null
   }
 ]

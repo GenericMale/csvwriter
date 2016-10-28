@@ -3,6 +3,7 @@
 var csvwriter = require('../lib/csvwriter');
 var pkg = require('../package.json');
 var fs = require('fs');
+var chalk = require('chalk');
 
 /**
  * @type {csvParameters}
@@ -30,6 +31,7 @@ program
     .option('-s, --null-string <string>', 'string to use for writing null or undefined values', '')
     .option('-t, --tabs', 'specifies that the csv is delimited with tabs, overrides -d')
     .option('-T, --table', 'create a neat looking table for the console')
+    .option('-C, --header-color <color>', 'color of the table header, one of: black, red, green, yellow, blue, magenta, cyan, white, gray (red)', 'red')
     .option('-u, --quote-mode <0,1,2,3>', 'quoting style used in the csv: 0 = quote minimal (default), 1 = quote all, 2 = quote non-numeric, 3 = quote none', Number, 0)
     .option('-U, --no-utf-bom', 'do not write utf bom (0xFEFF or 0xEFBBBF) in file if encoding is set to utf')
     .option('-z, --zero', 'when interpreting or displaying column numbers, use zero-based numbering instead of the default 1-based numbering')
@@ -68,5 +70,10 @@ stream.on('data', function (chunk) {
     data += chunk;
 });
 stream.on('end', function () {
+    //disable console colors when writing table to file
+    if (program.output !== '-') {
+        program.headerColor = '';
+    }
+
     csvwriter(data, program, writeOut);
 });
